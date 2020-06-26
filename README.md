@@ -4,9 +4,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,
-foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
+|group_id|references|null: false,foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -20,8 +19,7 @@ foreign_key: true|
 |group|string||
 |menber|stirng|foreign_key: true|
 |message_id|references|null: false,foreign_kye: true|
-|user_id|references|null:false,
-foreign_kye: true|
+|user_id|references|null:false,foreign_kye: true|
 
 ### Association
 - has_many :groups_users
@@ -33,8 +31,7 @@ foreign_kye: true|
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
-|email|string|null:false,
-add_index unique: true|
+|email|string|null:false,add_index unique: true|
 |password|string|null:false|
 
 ### Association
@@ -50,10 +47,8 @@ has_many :messages
 |------|----|-------|
 |body|text|null:false|
 |image|string||
-|user_id|references|null:false,
-foreign_kye: true|
-|gourp_id|references|null:false,
-foregn_kye: true|
+|user_id|references|null:false,foreign_kye: true|
+|gourp_id|references|null:false,foregn_kye: true|
 
 ### Association
 - belongs_to :group
