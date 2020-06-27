@@ -16,10 +16,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|add_index unique: true|
-|menber|stirng|foreign_key: true|
-|message_id|references|null: false, foreign_key: true|
-|user_id|references|null:false, foreign_key: true|
+|name|string|null:false, add_index unique: true|
+
 
 ### Association
 - has_many :groups_users
