@@ -52,14 +52,18 @@
     &__list {
       height: 91px;
       font-weight: bold;
-      color: #ffffff;
 
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      
       &__name {
         font-size: 15px;
         margin-top: 20px;
         margin-bottom: 5px;
-
       }
+
       &__message {
         font-size: 11px;
         margin-bottom: 40px;
