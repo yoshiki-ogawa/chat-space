@@ -2,37 +2,21 @@
   .main__header
     .main__header__left
       .main__header__left__name
-        test
+        = @group.name
       .main__header__left__menber
-        Menber:masa
-    .main__header__right
-      = link_to "#", class: ".main__header__right__btn" do
+        Member：
+        -@group.users.each do |user|
+          = user.name + " "
+    .main__header__right 
+      =link_to edit_group_path(@group) do
         Edit
   .main__messages
-    .main__messages__box
-      .main__messages__box__name
-        masa
-        .main__messages__box__name__date-time
-          2020/07/02(thu) 12:12:12
-      .main__messages__box__message
-        こんにちは！ 
-      .main__messages__box__name
-        wasa
-        .main__messages__box__name__date-time
-          2020/07/02(thu) 14:14:14
-      .main__messages__box__message
-        ありがとう!!  
-      .main__messages__box__name
-        masa
-        .main__messages__box__name__date-time
-          2020/07/02(thu) 18:18:18
-      .main__messages__box__message
-        こんばんは!!! 
-  .main__footer
-    %form.main__footer__form
-      .main__footer__form__input
-        %input{type: "text", class: "main__footer__form__input__box", placeholder: "type a message"}
-        %label{class: "main__footer__form__input__image"}
-          %i.fas.fa-image
-          %input{type: "file", class: "main__footer__form__input__image__file"}
-      %input{type: "submit", class: "main__footer__form__submit", value: "Send"}
+    = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
